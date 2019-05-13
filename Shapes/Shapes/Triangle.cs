@@ -40,13 +40,12 @@ namespace Shapes
         }
         public static TriangleType GetTriangleType(int a, int b, int c)
         {
-            // There should also be a side length check
             if (a <= 0 || b <= 0 || c <= 0)
             {
                 return TriangleType.Error;
             }
 
-            if (a == b && a == c) // These could also be their own methods
+            if (a == b && a == c)
             {
                 return TriangleType.Equilateral;
             }
