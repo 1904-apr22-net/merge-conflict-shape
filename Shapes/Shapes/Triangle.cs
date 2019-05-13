@@ -29,7 +29,7 @@ namespace Shapes
             }
         }
 
-        public bool isScalene()
+        public bool isIscoceles()
         {
             if (this.Side1 == this.Side2 && this.Side1 != this.BaseSide)
             {
