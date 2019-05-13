@@ -4,19 +4,59 @@ using System.Text;
 
 namespace Shapes
 {
-    class Triangle
+    public enum TriangleType
     {
-	public double Base{ get; set; }
-	public double Height{ get; set; }
+        Scalene = 1, // no two sides are the same length
+        Isosceles = 2, // two sides are the same length and one differs
+        Equilateral = 3, // all sides are the same length
+        Error = 4 // inputs can't produce a triangle
+    }
+    public class Triangle
+    {
+        public string color { get; set; }
+        public string description { get; set; } = "Bacon ipsum dolor amet beef ribs strip steak cow, ball tip biltong ground round alcatra leberkas shank. Salami andouille cupim rump porchetta, hamburger ham hock venison shank t-bone corned beef biltong picanha drumstick. Pig frankfurter spare ribs meatloaf. Kielbasa hamburger landjaeger sirloin tail meatball alcatra shank picanha andouille biltong capicola turkey pork chop pork.";
+        public double sideA { get; set; }
+        public double sideB { get; set; }
+        public double baseT { get; set; }
+        public double height { get; set; }
+        public TriangleType TriangleType { get; private set; }
 
-	public Triangle(double base, double Height)
-	{
-		Base = base;
-		height = height;
-	}
-	public double GetArea()
-	{
-		return(Base * .5 * Height;
-	}
+        public double GetArea()
+        {
+            return (this.baseT * this.height) / 2;
+        }
+        public double GetPerimeter()
+        {
+            return sideA + sideB + baseT;
+        }
+
+
+        public Triangle(int a, int b, int c)
+        {
+            sideA = a;
+            sideB = b;
+            baseT = c;
+            TriangleType = GetTriangleType(a, b, c);
+        }
+        public static TriangleType GetTriangleType(int a, int b, int c)
+        {
+            if (a <= 0 || b <= 0 || c <= 0)
+            {
+                return TriangleType.Error;
+            }
+
+            if (a == b && a == c)
+            {
+                return TriangleType.Equilateral;
+            }
+            else if (a == b || a == c || b == c)
+            {
+                return TriangleType.Isosceles;
+            }
+            else
+            {
+                return TriangleType.Scalene;
+            }
+        }
     }
 }
