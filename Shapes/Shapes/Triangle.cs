@@ -7,20 +7,20 @@ namespace Shapes
 {
     public class Triangle
     {
-        public int A { get; set; }
-        public int B { get; set; }
-        public int C { get; set; }
+        public int Side1 { get; set; }
+        public int Side2 { get; set; }
+        public int Side3 { get; set; }
 
-        public double Perimeter => A + B + C;
+        public double Perimeter => Side1 + Side2 + Side3;
 
         public double Area => Math.Sqrt(Perimeter / 2 *
-            (Perimeter / 2 - A) * (Perimeter / 2 - B) * (Perimeter / 2 - C));
+            (Perimeter / 2 - Side1) * (Perimeter / 2 - Side2) * (Perimeter / 2 - Side3));
 
         public TriangleType Type
         {
             get
             {
-                var numEqualSides = new[] { A, B, C }.Distinct().Count();
+                var numEqualSides = new[] { Side1, Side2, Side3 }.Distinct().Count();
                 switch (numEqualSides)
                 {
                     case 1: return TriangleType.Equilateral;
