@@ -20,6 +20,9 @@ namespace Shapes
         {
             get
             {
+                // code like this gets nicer with upcoming
+                // "switch expression" feature in C# 8.0,
+                // coming in September...
                 var numEqualSides = new[] { Side1, Side2, Side3 }.Distinct().Count();
                 switch (numEqualSides)
                 {
