@@ -8,7 +8,7 @@ namespace Shapes
     {
         public double Area(int Tbase, int height)
         {
-            return (Tbase*height)/2
+            return (Tbase * height) / 2;
         }
     }
 }
