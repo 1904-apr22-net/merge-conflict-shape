@@ -58,6 +58,5 @@ namespace Shapes
                 return TriangleType.Scalene;
             }
         }
-        
     }
 }
