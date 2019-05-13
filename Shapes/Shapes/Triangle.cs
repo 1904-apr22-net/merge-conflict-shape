@@ -14,6 +14,7 @@ namespace Shapes
     public class Triangle
     {
         public string color { get; set; }
+        public string description { get; set; } = "Bacon ipsum dolor amet beef ribs strip steak cow, ball tip biltong ground round alcatra leberkas shank. Salami andouille cupim rump porchetta, hamburger ham hock venison shank t-bone corned beef biltong picanha drumstick. Pig frankfurter spare ribs meatloaf. Kielbasa hamburger landjaeger sirloin tail meatball alcatra shank picanha andouille biltong capicola turkey pork chop pork.";
         public double sideA { get; set; }
         public double sideB { get; set; }
         public double baseT { get; set; }
