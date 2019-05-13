@@ -4,30 +4,36 @@ using System.Text;
 
 namespace Shapes
 {
-    public class Triangle
+    class Triangle
     {
-        public static double tHeight = 3.0;
-        public static double tBase = 2.0;
-        private string _color;
-        private double _sideA;
-        private double _SideB;
-        public static double SideA { get; set; }
-        public static double SideB { get; set; }
-
-        public string Color { get; set; }
-
-        public double answer1 = TriangleArea(tHeight, tBase);
-
-        public double answer2 = TrianglePerimeter(tBase, SideA, SideB);
-
-        private static double TrianglePerimeter(double tBase, double sideA, double sideB)
+        public int side1;
+        public int side2;
+        public int side3;
+        public Triangle(int side1, int side2, int side3)
         {
-            return tBase + sideA + sideB;
+            side1 = this.side1;
+            side2 = this.side2;
+            side3 = this.side3;
+        }
+        public int Perimeter()
+        {
+            return side1 + side2 + side3;
         }
 
-        public static double TriangleArea(double tHeight, double tBase)
+        public void Type()
         {
-            return .5 * (tHeight * tBase);
+            if(side1 == side2 && side3 == side2 && side1 == side3)
+            {
+                Console.WriteLine("Equilateral");
+            }
+            else if(side1 != side2 && side3 != side2 && side1 != side3)
+            {
+                Console.WriteLine("Scalene");
+            }
+            else
+            {
+                Console.WriteLine("Isosceles");
+            }
         }
     }
 }
