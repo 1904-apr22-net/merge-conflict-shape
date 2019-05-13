@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Shapes
 {
-    class Triangle
+    public class Triangle
     {
+        int height { get; set; }
+        int base { get; set; }
+        //francisco will edit this later
     }
 }
